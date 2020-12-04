@@ -41,7 +41,7 @@ jobs:
         run: |
           mkdir friendlywrt-rk3399
           cd friendlywrt-rk3399
-          repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m rk3399.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
+          repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master-v19.07.4 -m rk3399.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
 
       - name: Add plugins
         run: |
@@ -57,13 +57,7 @@ jobs:
           sed -i 's/dnsmasq /dnsmasq-full /' friendlywrt/include/target.mk
           echo 'src-git lienol https://github.com/Lienol/openwrt-package' >> friendlywrt/feeds.conf.default
           echo 'src-git darkmatter https://github.com/Lienol/luci-theme-darkmatter;luci-18.06' >> friendlywrt/feeds.conf.default
-          ls ..
-          ls ../..
-          sh ../../remove_unused_config.sh
-          echo "do log"
-          ls ../..
-          echo "log use"
-          ls ../../remove_used_config.sh
+          sh ../remove_unused_config.sh
           sed -i '/CONFIG_LUCI_LANG_en/i\CONFIG_LUCI_LANG_zh_Hans=y' configs/config_rk3399
           sed -i '/CONFIG_LUCI_LANG_en/i\CONFIG_LUCI_LANG_zh_Hant=y' configs/config_rk3399
           echo '
