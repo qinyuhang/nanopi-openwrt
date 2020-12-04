@@ -46,6 +46,9 @@ jobs:
         run: |
           cd friendlywrt-rk3399
           repo sync -c  --no-clone-bundle
+          pwd
+          ls ..
+          ls ../..
           ../../remove_used_config.sh
           sed -i 's/CONFIG_BPFILTER=y/CONFIG_BPFILTER=n/' kernel/arch/arm64/configs/nanopi-r4_linux_defconfig
           sed -i 's/dnsmasq /dnsmasq-full /' friendlywrt/include/target.mk
