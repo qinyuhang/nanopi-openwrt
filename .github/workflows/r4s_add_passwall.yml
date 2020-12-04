@@ -46,8 +46,6 @@ jobs:
       - name: Add plugins
         run: |
           cd friendlywrt-rk3399
-          rm -f .repo/manifests/rk3399.xml
-          cp ../rk3399-19.xml .repo/manifests/rk3399.xml
           repo sync -c  --no-clone-bundle
           cd friendlywrt
           git remote add upstream https://github.com/coolsnowwolf/lede && git fetch upstream
