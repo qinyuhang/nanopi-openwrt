@@ -30,7 +30,7 @@ jobs:
         run: . 2_clone_source.sh master-v19.07.4 rk3399
 
       - name: Patch Kernel
-        run: . patch_kernel_5.4.sh
+        run: . patch_kernel_5.4_3399.sh
 
       - name: Mods
         run: |
