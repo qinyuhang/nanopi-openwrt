@@ -60,6 +60,10 @@ jobs:
           ls ..
           ls ../..
           sh ../../remove_unused_config.sh
+          echo "do log"
+          ls ../..
+          echo "log use"
+          ls ../../remove_used_config.sh
           sed -i '/CONFIG_LUCI_LANG_en/i\CONFIG_LUCI_LANG_zh_Hans=y' configs/config_rk3399
           sed -i '/CONFIG_LUCI_LANG_en/i\CONFIG_LUCI_LANG_zh_Hant=y' configs/config_rk3399
           echo '
